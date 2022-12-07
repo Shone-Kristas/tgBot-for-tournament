@@ -237,11 +237,9 @@ def callback_query_picture(call):
         elif len(total_ten) > 2:
             bot.send_message(call.message.chat.id, "\U0000203C Лимит баллов исчерпан \nПоставьте другой балл")
 
-
-list = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64]
+list = [i for i in range(1,65)]
 global heroes
 heroes = []
-
 
 @bot.message_handler(content_types=["text"])
 def repeat_all_messages(message):
@@ -271,8 +269,6 @@ def repeat_all_messages(message):
         return heroes
     except:
         bot.send_message(message.chat.id, "\U00002740 Что-то не так")
-    
-
 
 if __name__ == '__main__':
     bot.polling(none_stop=True)
